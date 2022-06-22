@@ -14,7 +14,7 @@ update_system(){
 
 install_basics(){
 	notify "Installation" "installing basic dependencies"
-	sudo apt install software-properties-common apt-transport-https wget ca-certificates gnupg2 ubuntu-keyring git-all -y
+	sudo apt install software-properties-common apt-transport-https wget ca-certificates gnupg2 ubuntu-keyring git-all curl jq -y
 }
 
 install_chrome_browser(){

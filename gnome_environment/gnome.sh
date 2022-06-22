@@ -9,17 +9,7 @@ notify(){
 
 install_ui_dependencies(){
 		notify "Installation" "installing basic dependencies"
-        sudo apt install gnome-tweaks -y
-		#sudo apt install chrome-gnome-shell -y
-}
-
-enable_gnome_extensions(){
-	notify "Installation" "enabling gnome extensions"
-	#google-chrome https://extensions.gnome.org/extension/19/user-themes
-	echo '****************************************'
-	echo '* Enable User Themes and press any key *'
-	echo '****************************************'
-	read ok
+        sudo apt install gnome-shell-extensions gnome-tweaks chrome-gnome-shell -y
 }
 
 install_theme(){
@@ -60,7 +50,13 @@ install_cursors(){
 }
 
 install_extensions(){
-	unzip resources/extensions.zip -d ~/.local/share/gnome-shell/extensions
+	notify "Installation" "installing extensions"
+	unzip resources/extensions.zip -d ~/.local/share/gnome-shell
+	echo '****************************************'
+	echo '* Configure extensions and press any key to reboot *'
+	echo '****************************************'
+	read ok
+	reboot
 }
 
 main(){
